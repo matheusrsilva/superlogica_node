@@ -1,0 +1,25 @@
+{
+  "name": "superlogica_node",
+  "version": "0.0.1",
+  "description": "Node.js SDK for Superlogica",
+  "main": "superlogica_node.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matheusrsilva/superlogica_node.git"
+  },
+  "keywords": [
+    "superlogica",
+    "node",
+    "payment",
+    "pagamento"
+  ],
+  "author": "Matheus Rodrigues da Silva <matheusrsilva@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/matheusrsilva/superlogica_node/issues"
+  },
+  "homepage": "https://github.com/matheusrsilva/superlogica_node#readme"
+}
