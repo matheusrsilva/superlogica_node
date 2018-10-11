@@ -114,7 +114,7 @@ class SuperLogica {
       }]
   }) {
     return this.superlogicaRequest('assinaturas', body,null, 'post');
-  }
+  };
 
   createAssinaturaPersonalizada(body = {
     ID_SACADO_SAC,
@@ -137,8 +137,7 @@ class SuperLogica {
     }]
   }){
     return this.superlogicaRequest('assinaturas', body, null, 'post');
-  }
-
+  };
 }
 exports.SuperLogica = SuperLogica;
 
