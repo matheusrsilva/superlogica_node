@@ -90,7 +90,6 @@ class SuperLogica {
     FL_SINCRONIZARFORNECEDOR_SAC,
     identificador,
     DT_CADASTRO_SAC}){
-    
     return this.superlogicaRequest('clientes', body,null, 'post');
   };
 
@@ -115,6 +114,29 @@ class SuperLogica {
       }]
   }) {
     return this.superlogicaRequest('assinaturas', body,null, 'post');
+  }
+
+  createAssinaturaPersonalizada(body = {
+    ID_SACADO_SAC,
+    DT_CONTRATO_PLC,
+    PLANOS: [{
+      ID_PLANO_PLA,
+      FL_TRIAL_PLC,
+      QUANT_PARCELAS_ADESAO,
+      ST_IDENTIFICADOR_PLC,
+      FL_NOTIFICARCLIENTE,
+      cupom,
+      FL_MULTIPLO_COMPO,
+    }],
+    OPCIONAIS: [{
+      ID_PRODUTO_PRD,
+      SELECIONAR_PRODUTO,
+      NM_QNTD_PLP,
+      valor_unitario,
+      FL_RECORRENTE_PLP,
+    }]
+  }){
+    return this.superlogicaRequest('assinaturas', body, null, 'post');
   }
 
 }
