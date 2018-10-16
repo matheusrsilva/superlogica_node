@@ -1,6 +1,6 @@
 {
   "name": "superlogica_node",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Node.js SDK for Superlogica",
   "main": "superlogica_node.js",
   "scripts": {
