@@ -147,7 +147,7 @@ class SuperLogica {
     ST_COMPLEMENTO_MENS
   }){
     return this.superlogicaRequest('recorrencias',body, null, 'put');
-  }
+  };
 }
 exports.SuperLogica = SuperLogica;
 
