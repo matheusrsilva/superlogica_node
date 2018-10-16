@@ -138,6 +138,16 @@ class SuperLogica {
   }){
     return this.superlogicaRequest('assinaturas', body, null, 'post');
   };
+
+  updateProdutoAssinatura(body = {
+    ID_PLANOCLIENTE_PLC,
+    ID_PRODUTO_PRD,
+    ST_QNTD_MENS,
+    ST_VALOR_MENS,
+    ST_COMPLEMENTO_MENS
+  }){
+    return this.superlogicaRequest('recorrencias',body, null, 'put');
+  }
 }
 exports.SuperLogica = SuperLogica;
 
