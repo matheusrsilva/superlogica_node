@@ -15,7 +15,6 @@ class SuperLogica {
   * Send a request to superlogica
   *
   * @param {String} urn
-  * @param {Object} header
   * @param {Object} body
   * @param {Object} params
   * @param {String} method
@@ -135,7 +134,7 @@ class SuperLogica {
       valor_unitario,
       FL_RECORRENTE_PLP,
     }]
-  }){
+  }) {
     return this.superlogicaRequest('assinaturas', body, null, 'post');
   };
 
@@ -145,8 +144,16 @@ class SuperLogica {
     ST_QNTD_MENS,
     ST_VALOR_MENS,
     ST_COMPLEMENTO_MENS
-  }){
+  }) {
     return this.superlogicaRequest('recorrencias',body, null, 'put');
+  };
+
+  cancelAssinatura(body = {
+    ID_PLANOCLIENTE_PLC,
+    DT_CANCELAMENTO_PLC,
+    FL_CANCELAMENTOIMEDIATO
+  }) {
+    return this.superlogicaRequest('assinaturas', body, null, 'put');
   };
 }
 exports.SuperLogica = SuperLogica;
