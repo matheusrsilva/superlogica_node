@@ -138,6 +138,29 @@ class SuperLogica {
     return this.superlogicaRequest('assinaturas', body, null, 'post');
   };
 
+  createCobrança(body = {
+    ID_SACADO_SAC,
+    COMPO_RECEBIMENTO: [{
+      ID_PRODUTO_PRD,
+      NM_QUANTIDADE_COMP,
+      VL_UNITARIO_PRD
+    }],
+    VL_EMITIDO_RECB,
+    DT_VENCIMENTO_RECB,
+    ID_FORMAPAGAMENTO_RECB,
+    ST_OBSERVACAOINTERNA_RECB,
+    ST_OBSERVACAOEXTERNA_RECB,
+    ID_CONTA_CB,
+    COBRANCA_PARCELAS: [{
+      VL_EMITIDO_RECB,
+      DT_VENCIMENTO_RECB,
+      ST_OBSERVACAOEXTERNA_RECB
+    }],
+    ST_NOSSONUMEROFIXO_RECB
+  }) {
+    return this.superlogicaRequest('cobranca', body, null, 'post');
+  };
+
   updateProdutoAssinatura(body = {
     ID_PLANOCLIENTE_PLC,
     ID_PRODUTO_PRD,
