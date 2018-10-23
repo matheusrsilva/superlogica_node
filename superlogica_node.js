@@ -140,7 +140,7 @@ class SuperLogica {
 
   getCobranca(params = {
     id,
-    exibirComposicaoDosBoletos = 0
+    exibirComposicaoDosBoletos: 0
   }){
     return this.superlogicaRequest('cobranca', null, params, 'get');
   };
