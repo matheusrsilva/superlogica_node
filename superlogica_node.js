@@ -138,6 +138,13 @@ class SuperLogica {
     return this.superlogicaRequest('assinaturas', body, null, 'post');
   };
 
+  getCobranca(params = {
+    id,
+    exibirComposicaoDosBoletos = 0
+  }){
+    return this.superlogicaRequest('cobranca', null, params, 'get');
+  };
+
   createCobrança(body = {
     ID_SACADO_SAC,
     COMPO_RECEBIMENTO: [{
