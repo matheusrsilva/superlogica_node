@@ -92,6 +92,16 @@ class SuperLogica {
     return this.superlogicaRequest('clientes', body,null, 'post');
   };
 
+  getAssinaturas(params = {
+    identificadorContrato,
+    identificadorCliente,
+    ID_SACADO_SAC,
+    pagina: 1,
+    itensPorPagina: 50
+  }) {
+    return this.superlogicaRequest('assinaturas', null, params, 'get');
+  };
+
   createAssinatura(body = {
     PLANOS: [{
       ID_SACADO_SAC,
@@ -185,6 +195,16 @@ class SuperLogica {
   }) {
     return this.superlogicaRequest('assinaturas', body, null, 'put');
   };
+
+  getInadimplentes(params = {
+    CLIENTES: [],
+    posicaoEm,
+    GRUPOS: [],
+    pagina: 1,
+    itensPorPagina: 50
+  }) {
+    return this.superlogicaRequest('clientes/inadimplencia',null, params, 'get')
+  }
 }
 exports.SuperLogica = SuperLogica;
 
