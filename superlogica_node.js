@@ -155,7 +155,7 @@ class SuperLogica {
     return this.superlogicaRequest('cobranca', null, params, 'get');
   };
 
-  createCobrança(body = {
+  createCobranca(body = {
     ID_SACADO_SAC,
     COMPO_RECEBIMENTO: [{
       ID_PRODUTO_PRD,
