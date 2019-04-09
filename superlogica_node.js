@@ -92,6 +92,53 @@ class SuperLogica {
     return this.superlogicaRequest('clientes', body,null, 'post');
   };
 
+  updateCliente(body = {
+    ID_SACADO_SAC,
+    identificador,
+    ST_NOME_SAC,
+    ST_NOMEREF_SAC,
+    ST_SINCRO_SAC,
+    ST_DIAVENCIMENTO_SAC,
+    ST_CGC_SAC,
+    ST_RG_SAC,
+    ST_ORGAO_SAC,
+    ST_INSCMUNICIPAL_SAC,
+    ST_INSCRICAO_SAC,
+    ISENTO_ICMS,
+    FL_OPTANTESIMPLES_SAC,
+    ST_SUFRAMA_SAC,
+    ST_CEP_SAC,
+    ST_ENDERECO_SAC,
+    ST_NUMERO_SAC,
+    ST_BAIRRO_SAC,
+    ST_COMPLEMENTO_SAC,
+    ST_CIDADE_SAC,
+    ST_ESTADO_SAC,
+    FL_MESMOEND_SAC,
+    ST_CEPENTREGA_SAC,
+    ST_ENDERECOENTREGA_SAC,
+    ST_NUMEROENTREGA_SAC,
+    ST_COMPLEMENTOENTREGA_SAC,
+    ST_BAIRROENTREGA_SAC,
+    ST_CIDADEENTREGA_SAC,
+    ST_ESTADOENTREGA_SAC,
+    ST_PONTOREFERENCIAENTREGA_SAC,
+    ST_EMAIL_SAC,
+    SENHA,
+    SENHA_CONFIRMACAO,
+    ST_DDD_SAC,
+    ST_TELEFONE_SAC,
+    ST_FAX_SAC,
+    DESABILITAR_MENSALIDADE,
+    ST_CODIGOCONTABIL_SAC,
+    FL_RETERISSQN_SAC,
+    TX_OBSERVACAO_SAC,
+    FL_SINCRONIZARFORNECEDOR_SAC,
+    NM_DIASCARENCIA_SAC
+  }){
+    return this.superlogicaRequest('clientes', body, null, 'put')
+  }
+
   getAssinaturas(params = {
     identificadorContrato,
     identificadorCliente,
