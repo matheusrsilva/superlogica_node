@@ -34,16 +34,25 @@ class SuperLogica {
       body,
       json: true
     });
-  };
+  }
 
+  /**
+  * Get a list of Customers
+  */
   getClientes(params = {pagina: 1, status: 0, apenasColunasPrincipais: 1}){
     return this.superlogicaRequest('clientes', null, params ,'get');
-  };
-  
+  }
+
+  /**
+  * Get data of a Customer
+  */
   getCliente(params = {id}){
     return this.superlogicaRequest('clientes', null, params, 'get');
-  };
-  
+  }
+
+  /**
+  * Insert a new Customer
+  */
   createCliente(body = {ST_NOME_SAC,
     ST_NOMEREF_SAC,
     ST_DIAVENCIMENTO_SAC,
@@ -90,8 +99,11 @@ class SuperLogica {
     identificador,
     DT_CADASTRO_SAC}){
     return this.superlogicaRequest('clientes', body,null, 'post');
-  };
+  }
 
+  /**
+  * Update a Customer
+  */
   updateCliente(body = {
     ID_SACADO_SAC,
     identificador,
@@ -137,8 +149,11 @@ class SuperLogica {
     NM_DIASCARENCIA_SAC
   }){
     return this.superlogicaRequest('clientes', body, null, 'put')
-  };
+  }
 
+  /**
+  * Get Subscription of a Customer
+  */
   getAssinaturas(params = {
     identificadorContrato,
     identificadorCliente,
@@ -147,7 +162,7 @@ class SuperLogica {
     itensPorPagina: 50
   }) {
     return this.superlogicaRequest('assinaturas', null, params, 'get');
-  };
+  }
 
   createAssinatura(body = {
     PLANOS: [{
@@ -170,7 +185,7 @@ class SuperLogica {
       }]
   }) {
     return this.superlogicaRequest('assinaturas', body,null, 'post');
-  };
+  }
 
   createAssinaturaPersonalizada(body = {
     ID_SACADO_SAC,
@@ -200,7 +215,7 @@ class SuperLogica {
     exibirComposicaoDosBoletos: 0
   }){
     return this.superlogicaRequest('cobranca', null, params, 'get');
-  };
+  }
 
   createCobranca(body = {
     ID_SACADO_SAC,
@@ -223,7 +238,7 @@ class SuperLogica {
     ST_NOSSONUMEROFIXO_RECB
   }) {
     return this.superlogicaRequest('cobranca', body, null, 'post');
-  };
+  }
 
   updateProdutoAssinatura(body = {
     ID_PLANOCLIENTE_PLC,
@@ -233,7 +248,7 @@ class SuperLogica {
     ST_COMPLEMENTO_MENS
   }) {
     return this.superlogicaRequest('recorrencias',body, null, 'put');
-  };
+  }
 
   cancelAssinatura(body = {
     ID_PLANOCLIENTE_PLC,
@@ -241,7 +256,7 @@ class SuperLogica {
     FL_CANCELAMENTOIMEDIATO
   }) {
     return this.superlogicaRequest('assinaturas', body, null, 'put');
-  };
+  }
 
   getInadimplentes(params = {
     CLIENTES: [],
@@ -250,7 +265,30 @@ class SuperLogica {
     pagina: 1,
     itensPorPagina: 50
   }) {
-    return this.superlogicaRequest('clientes/inadimplencia',null, params, 'get')
+    return this.superlogicaRequest('clientes/inadimplencia', null, params, 'get');
+  }
+  
+  getPlano(params = {id}) {
+    return this.superlogicaRequest('planos/id', null, params, 'get');
+  }
+
+  changePaymentType(body = {
+    ID_SACADO_SAC,
+    FL_PAGAMENTOPREF_SAC,
+    CONVIDAR,
+    ST_CARTAOTOKEN_SAC,
+    ST_CARTAOBANDEIRA_SAC,
+    ST_CARTAO_SAC,
+    ST_MESVALIDADE_SAC,
+    ST_ANOVALIDADE_SAC,
+    ST_SEGURANCACARTAO_SAC,
+    ST_NOMECARTAO_SAC,
+    ID_FORMA_FRECB,
+    ST_BANCO_SAC,
+    ST_AGENCIA_SAC,
+    ST_CONTABANCARIA_SAC
+  }){
+    return this.superlogicaRequest('clientes/formadepagamento', body, null, 'put');
   }
 }
 exports.SuperLogica = SuperLogica;
