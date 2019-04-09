@@ -137,7 +137,7 @@ class SuperLogica {
     NM_DIASCARENCIA_SAC
   }){
     return this.superlogicaRequest('clientes', body, null, 'put')
-  }
+  };
 
   getAssinaturas(params = {
     identificadorContrato,
